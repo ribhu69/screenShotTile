@@ -34,6 +34,7 @@ class ScreenShotTile : TileService() {
     }
 
 
+    // on tapping the qstile this is invoked
     override fun onClick() {
 
 
@@ -55,14 +56,17 @@ class ScreenShotTile : TileService() {
 
 
 
-    private fun takeScreenshot() {
+    private fun takeScreenshot() 
+    
+         // closes the notification panel onclick to proceed with taking the screenshot of the current view 
+
         val closeIntent = Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
         sendBroadcast(closeIntent)
 
         rootView = Activity().window.decorView.rootView as View
 
 
-        // create bitmap screen capture
+        // create bitmap screen capture and saves it to Pictures
         try {
 
 
